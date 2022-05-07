@@ -2,7 +2,7 @@ Name: user.rpc
 ListenOn: 0.0.0.0:9000
 Etcd:
   Hosts:
-    - http://42.193.126.48:2379
+    - 42.193.126.48:2379
   Key: user.rpc
 
 Mysql:
@@ -13,3 +13,15 @@ CacheRedis:
     Type: node
 
 Salt: HWVOFkGgPTryzICwd7qnJaZR9KQ2i8xe
+
+Auth: true # 是否开启 Auth 验证
+StrictControl: true # 是否开启严格模式
+Redis: # 指定 Redis 服务
+  Key: rpc:auth:user # 指定 key 应为 hash 类型
+  Host: 42.193.126.48:6379
+  Type: node
+
+Prometheus:
+  Host: 42.193.126.48
+  Port: 9090
+  Path: /metrics

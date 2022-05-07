@@ -2,7 +2,14 @@ Name: user.api
 Host: 0.0.0.0
 Port: 8000
 
+Prometheus:
+  Host: 42.193.126.48
+  Port: 9080
+  Path: /metrics
+
 UserRpc:
+  App: userapi # app 标识
+  Token: 6jKNZbEpYGeUMAifz10gOnmoty3TV # token 值
   Etcd:
     Hosts:
     - 42.193.126.48:2379
@@ -11,3 +18,4 @@ UserRpc:
 Auth:
   AccessSecret: uOvKLmVfztaXGpNYd4Z0I1SiT7MweJhl
   AccessExpire: 86400
+
